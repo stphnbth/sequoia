@@ -3,8 +3,8 @@
 
 #include <stdlib.h>
 
-#include "../base/list.h"
-#include "../base/set.h"
+#include "linked.h"
+#include "set.h"
 
 typedef struct AdjList_ {
 	void							*vertex;

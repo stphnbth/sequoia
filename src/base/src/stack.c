@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "../base/list.h"
+#include "linked.h"
 #include "stack.h"
 
 int stack_push(Stack *stack, const void *data) {

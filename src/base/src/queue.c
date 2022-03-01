@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "../base/list.h"
+#include "linked.h"
 #include "queue.h"
 
 int queue_enqueue(Queue *queue, const void *data) {

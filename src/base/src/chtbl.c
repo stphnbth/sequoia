@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "list.h"
+#include "linked.h"
 #include "chtbl.h"
 
 int chtbl_init(CHTbl *htbl, int buckets, int (*h)(const void *key), int (*match)(const void *key1, const void *key2),

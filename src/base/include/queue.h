@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-#include "../base/list.h"
+#include "linked.h"
 
 typedef List Queue;
 

@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-#include "list.h"
+#include "linked.h"
 
 typedef struct CHTbl_ {
 	int				buckets;
