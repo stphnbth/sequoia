@@ -5,7 +5,7 @@
 
 
 typedef struct Elmt_ {
-	void							*data;
+	void					*data;
 	struct Elmt_			*next;
 }	Elmt;
 
@@ -20,7 +20,7 @@ typedef struct List_ {
 }	List;
 
 
-void list_init(List *list, void (*destroy)(void *data));
+List* list_init();
 void list_destroy(List *list);
 
 int list_ins_next(List *list, Elmt *element, const void *data);

@@ -2,15 +2,20 @@
 #include <string.h>
 
 #include "linked.h"
+#include "memory.h"
 
 
-void list_init(List *list, void (*destroy)(void *data)) {
-	list->size = 0;
-	list->destroy = destroy;
-	list->head = NULL;
-	list->tail = NULL;
+List* list_init() {
+	List *new_list;
 
-	return;
+	new_list = allocate(malloc, sizeof(List));
+
+	new_list->size = 0;
+	new_list->destroy = free;
+	new_list->head = NULL;
+	new_list->tail = NULL;
+
+	return new_list;
 }
 
 void list_destroy(List *list) {
