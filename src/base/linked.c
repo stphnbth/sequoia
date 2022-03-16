@@ -6,16 +6,14 @@
 
 
 List* list_init() {
-	List *new_list;
+	List *list = allocate(malloc, sizeof(List));
 
-	new_list = allocate(malloc, sizeof(List));
+	list->size = 0;
+	list->destroy = free;
+	list->head = NULL;
+	list->tail = NULL;
 
-	new_list->size = 0;
-	new_list->destroy = free;
-	new_list->head = NULL;
-	new_list->tail = NULL;
-
-	return new_list;
+	return list;
 }
 
 void list_destroy(List *list) {
@@ -32,12 +30,8 @@ void list_destroy(List *list) {
 }
 
 int list_ins_next(List *list, Elmt *element, const void *data) {
-	Elmt 	*new_element;
-
-	if ((new_element = (Elmt *)malloc(sizeof(Elmt))) == NULL)
-		return -1;
-
-	new_element->data = (void *)data;
+	Elmt 	*new_element = allocate(malloc, sizeof(Elmt));
+	new_element->data = allocate(malloc, sizeof(data));
 
 	if (element == NULL) {
 		if (list_size(list) == 0)
